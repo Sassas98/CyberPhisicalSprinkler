@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
     "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
-<entity name="irrigation_v4" class="ptolemy.actor.TypedCompositeActor">
+<entity name="sprinkler_v4" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
     <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
@@ -10,7 +10,7 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000044">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{597.999999999999, 331.49999999999864}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{597.9999999999987, 331.49999999999864}">
     </property>
     <property name="Continuous Director" class="ptolemy.domains.continuous.kernel.ContinuousDirector">
         <property name="stopTime" class="ptolemy.data.expr.Parameter" value="240">
@@ -199,7 +199,7 @@
     <entity name="Soil" class="ptolemy.actor.TypedCompositeActor">
         <property name="_location" class="ptolemy.kernel.util.Location" value="{580.0, 315.0}">
         </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={134, 234, 928, 617}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={134, 234, 1121, 617}, maximized=false}">
         </property>
         <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 500]">
         </property>
@@ -611,7 +611,7 @@
         </property>
     </entity>
     <entity name="TankLevel" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1352, 20, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={768, 71, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -623,12 +623,12 @@
 <plot>
 <title>TankLevel</title>
 <xRange min="0.0" max="240.0"/>
-<yRange min="9.750000000000043" max="81.5"/>
+<yRange min="9.000000000000034" max="90.0"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="WaterInput" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={318, 638, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={268, 402, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -640,7 +640,7 @@
 <plot>
 <title>WaterInput</title>
 <xRange min="0.0" max="240.0"/>
-<yRange min="0.0" max="115.0"/>
+<yRange min="0.0" max="145.0"/>
 </plot>?>
         </configure>
     </entity>
@@ -653,7 +653,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[1610.0, 415.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[1550.0, 445.0]">
             </property>
         </port>
         <port name="meanTemperature" class="ptolemy.actor.TypedIOPort">
@@ -753,7 +753,7 @@
       <entity name="state library" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="state" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property><property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory"></property></entity></entity>
     </configure>
             </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={496, 231, 928, 617}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 500]">
             </property>
@@ -878,7 +878,7 @@
         <link port="_Controller.temperature" relation="temperatureRelation"/>
     </entity>
     <entity name="Rain Behavior" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1354, 679, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={768, 405, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -889,8 +889,8 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>Rain Behavior</title>
-<xRange min="51.0" max="240.0"/>
-<yRange min="0.0" max="15.0"/>
+<xRange min="37.0" max="240.0"/>
+<yRange min="0.0" max="6.0"/>
 </plot>?>
         </configure>
     </entity>

@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
     "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
-<entity name="irrigation_v2" class="ptolemy.actor.TypedCompositeActor">
+<entity name="sprinkler_v2" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
     <property name="SDF Director" class="ptolemy.domains.sdf.kernel.SDFDirector">
         <property name="iterations" class="ptolemy.data.expr.Parameter" value="168">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[110.0, 55.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[845.0, 350.0]">
         </property>
     </property>
     <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
@@ -16,11 +16,11 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000007">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{779.9999999999994, 321.4999999999992}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{1135.999999999999, 358.49999999999915}">
     </property>
     <entity name="SimulationHour" class="ptolemy.actor.lib.Ramp">
         <doc>Create a sequence of tokens with increasing value</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[55.0, 195.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[860.0, 15.0]">
         </property>
     </entity>
     <entity name="HourOfDay" class="ptolemy.actor.lib.Expression">
@@ -34,7 +34,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[230.0, 195.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 90.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -45,8 +45,6 @@
         </port>
         <port name="hour" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -55,7 +53,7 @@
     </entity>
     <entity name="Uniform" class="ptolemy.actor.lib.Uniform">
         <doc>Create a sequence of uniformly distributed random numbers</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[55.0, 285.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[885.0, 180.0]">
         </property>
     </entity>
     <entity name="Rain" class="ptolemy.actor.lib.Expression">
@@ -69,7 +67,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[295.0, 285.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[850.0, 235.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -80,8 +78,6 @@
         </port>
         <port name="rnd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -99,7 +95,7 @@
             <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="displayWidth">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[215.0, 360.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[670.0, 495.0]">
         </property>
     </entity>
     <entity name="TankMemory" class="ptolemy.domains.sdf.lib.SampleDelay">
@@ -113,7 +109,7 @@
             <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="displayWidth">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[155.0, 435.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1125.0, 670.0]">
         </property>
     </entity>
     <entity name="SoilUpdate" class="ptolemy.actor.lib.Expression">
@@ -127,7 +123,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1210.0, 400.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1370.0, 310.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -138,8 +134,6 @@
         </port>
         <port name="soil" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -147,8 +141,6 @@
         </port>
         <port name="rain" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -156,8 +148,6 @@
         </port>
         <port name="pump" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -175,7 +165,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1200.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[940.0, 670.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -186,8 +176,6 @@
         </port>
         <port name="tank" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -195,8 +183,6 @@
         </port>
         <port name="rain" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -204,8 +190,6 @@
         </port>
         <port name="pump" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -213,11 +197,11 @@
         </port>
     </entity>
     <entity name="SoilMoisture" class="ptolemy.actor.lib.gui.SequencePlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={430, 577, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={147, 202, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 325.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[660.0, 345.0]">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
@@ -225,24 +209,24 @@
 <plot>
 <title>SoilMoisture</title>
 <xRange min="0.0" max="167.0"/>
-<yRange min="0.0" max="44.0"/>
+<yRange min="27.0" max="56.5"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="TankLevel" class="ptolemy.actor.lib.gui.SequencePlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={827, 347, 516, 288}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1260, 749, 516, 288}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 228]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[715.0, 480.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1260.0, 575.0]">
         </property>
         <configure>
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TankLevel</title>
-<xRange min="-20.596666666666664" max="187.59666666666666"/>
-<yRange min="1.7600000000000007" max="86.24"/>
+<xRange min="0.0" max="167.0"/>
+<yRange min="55.25" max="81.5"/>
 </plot>?>
         </configure>
     </entity>
@@ -251,18 +235,16 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[343, 210]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1370.0, 40.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1520.0, 520.0]">
         </property>
     </entity>
     <entity name="IrrigationDemand" class="ptolemy.domains.modal.modal.ModalModel">
         <property name="_tableauFactory" class="ptolemy.vergil.modal.modal.ModalTableauFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[530.0, 85.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[775.0, 125.0]">
         </property>
         <port name="demand" class="ptolemy.domains.modal.modal.ModalPort">
             <property name="output"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -270,8 +252,6 @@
         </port>
         <port name="soil" class="ptolemy.domains.modal.modal.ModalPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -413,7 +393,7 @@ Then delete this annotation.</text>
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1000.0, 155.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 145.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -424,8 +404,6 @@ Then delete this annotation.</text>
         </port>
         <port name="demand" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -433,8 +411,6 @@ Then delete this annotation.</text>
         </port>
         <port name="tank" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -442,8 +418,6 @@ Then delete this annotation.</text>
         </port>
         <port name="rain" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -451,8 +425,6 @@ Then delete this annotation.</text>
         </port>
         <port name="hour" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -464,15 +436,15 @@ Then delete this annotation.</text>
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[343, 186]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1210.0, 265.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1040.0, 195.0]">
         </property>
     </entity>
     <entity name="IsDemand" class="ptolemy.actor.lib.gui.Display">
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={334, 257, 359, 246}, maximized=false}">
         </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[343, 186]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[890.0, -5.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[915.0, 90.0]">
         </property>
     </entity>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
@@ -482,13 +454,13 @@ Then delete this annotation.</text>
     <relation name="relation5" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[645.0, 360.0]">
+        <vertex name="vertex1" value="[700.0, 300.0]">
         </vertex>
     </relation>
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[825.0, 285.0]">
+        <vertex name="vertex1" value="[1005.0, 235.0]">
         </vertex>
     </relation>
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
@@ -498,13 +470,13 @@ Then delete this annotation.</text>
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[620.0, 430.0]">
+        <vertex name="vertex1" value="[1170.0, 575.0]">
         </vertex>
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[970.0, 230.0]">
+        <vertex name="vertex1" value="[1445.0, 520.0]">
         </vertex>
     </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
@@ -512,7 +484,7 @@ Then delete this annotation.</text>
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{765.0, 120.0}">
+        <vertex name="vertex1" value="[875.0, 125.0]">
         </vertex>
     </relation>
     <link port="SimulationHour.output" relation="relation"/>
