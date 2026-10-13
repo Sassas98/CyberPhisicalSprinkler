@@ -4,7 +4,7 @@
 <entity name="sprinkler_v5" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1912, -8, 1936, 1048}, maximized=true}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 931]">
     </property>
@@ -148,7 +148,7 @@
         <link port="_Controller.soil" relation="soilRelation"/>
     </entity>
     <entity name="PumpLogic" class="ptolemy.actor.lib.Expression">
-        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="demand&#10;&amp;&amp; tank &gt; 10.0&#10;&amp;&amp; rain == 0.0&#10;&amp;&amp; (&#10;    (hour &gt;= 6 &amp;&amp;&#10;     hour &lt;= 8) ||&#10;    (hour &gt;= 19 &amp;&amp;&#10;     hour &lt;= 20)&#10;)">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="demand&#10;&amp;&amp; tank &gt; 10.0&#10;&amp;&amp; rain == 0.0&#10;&amp;&amp; (&#10;    (hour &gt;= 6 &amp;&amp;&#10;     hour &lt;= 8) ||&#10;    (hour &gt;= 19 &amp;&amp;&#10;     hour &lt;= 21)&#10;)">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
