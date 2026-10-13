@@ -4,13 +4,13 @@
 <entity name="sprinkler_v5" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1912, -8, 1936, 1048}, maximized=true}">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 931]">
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000042">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{482.99999999999943, 457.4999999999994}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{713.0000000000011, 275.49999999999955}">
     </property>
     <property name="Continuous Director" class="ptolemy.domains.continuous.kernel.ContinuousDirector">
         <property name="stopTime" class="ptolemy.data.expr.Parameter" value="24*30">
@@ -148,7 +148,7 @@
         <link port="_Controller.soil" relation="soilRelation"/>
     </entity>
     <entity name="PumpLogic" class="ptolemy.actor.lib.Expression">
-        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="demand&#10;&amp;&amp; tank &gt; 10.0&#10;&amp;&amp; rain == 0.0&#10;&amp;&amp; (&#10;    hour == 6 ||&#10;    hour == 7 ||&#10;    hour == 19 ||&#10;    hour == 20&#10;)">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="demand&#10;&amp;&amp; tank &gt; 10.0&#10;&amp;&amp; rain == 0.0&#10;&amp;&amp; (&#10;    (hour &gt;= 6 &amp;&amp;&#10;     hour &lt;= 8) ||&#10;    (hour &gt;= 19 &amp;&amp;&#10;     hour &lt;= 20)&#10;)">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -158,7 +158,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[995.0, 245.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{995.0, 245.0}">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -483,9 +483,9 @@
         </property>
     </entity>
     <entity name="SoilMoisture" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={265, 68, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={2216, 127, 776, 360}, maximized=false}">
         </property>
-        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[760, 300]">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[670.0, 150.0]">
         </property>
@@ -494,8 +494,8 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>SoilMoisture</title>
-<xRange min="0.0" max="720.0"/>
-<yRange min="2.1968169124467942" max="60.29805301755679"/>
+<xRange min="0.0" max="277.40000000000003"/>
+<yRange min="0.0" max="55.0"/>
 </plot>?>
         </configure>
     </entity>
@@ -531,8 +531,6 @@
         </port>
         <port name="open" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_location" class="ptolemy.kernel.util.Location" value="[20.0, 300.0]">
@@ -542,8 +540,6 @@
         </port>
         <port name="consumption" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="[double]">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -625,8 +621,6 @@
             </port>
             <port name="open" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
                 </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -684,9 +678,9 @@
         </property>
     </entity>
     <entity name="TankLevel" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={768, 71, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={2974, 125, 761, 360}, maximized=false}">
         </property>
-        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[745, 300]">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[780.0, 560.0]">
         </property>
@@ -695,13 +689,13 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>TankLevel</title>
-<xRange min="0.0" max="720.0"/>
-<yRange min="35.400000000000105" max="86.00000000000023"/>
+<xRange min="0.0" max="277.40000000000003"/>
+<yRange min="32.10000000000148" max="96.50000000000063"/>
 </plot>?>
         </configure>
     </entity>
     <entity name="WaterInput" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={268, 402, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={2224, 476, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -712,8 +706,8 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>WaterInput</title>
-<xRange min="0.0" max="720.0"/>
-<yRange min="0.0" max="445.0"/>
+<xRange min="0.0" max="277.40000000000003"/>
+<yRange min="0.0" max="185.0"/>
 </plot>?>
         </configure>
     </entity>
@@ -951,7 +945,7 @@
         <link port="_Controller.temperature" relation="temperatureRelation"/>
     </entity>
     <entity name="Rain Behavior" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={768, 405, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={2720, 474, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -962,8 +956,8 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>Rain Behavior</title>
-<xRange min="30.0" max="720.0"/>
-<yRange min="0.0" max="15.0"/>
+<xRange min="88.0" max="277.40000000000003"/>
+<yRange min="0.0" max="6.0"/>
 </plot>?>
         </configure>
     </entity>
@@ -987,8 +981,6 @@
         </property>
         <port name="level" class="ptolemy.domains.modal.modal.ModalPort">
             <property name="input"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -996,8 +988,6 @@
         </port>
         <port name="open" class="ptolemy.domains.modal.modal.ModalPort">
             <property name="output"/>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_type" class="ptolemy.actor.TypeAttribute" value="boolean">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -1009,7 +999,7 @@
       <entity name="state library" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="state" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property><property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory"></property></entity></entity>
     </configure>
             </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={496, 231, 928, 617}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1936, 1048}, maximized=true}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 500]">
             </property>
@@ -1029,7 +1019,7 @@
                 <property name="output"/>
                 <property name="defaultValue" class="ptolemy.data.expr.Parameter" value="">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="{300.0, 380.0}">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[340.0, 270.0]">
                 </property>
             </port>
             <entity name="Off" class="ptolemy.domains.modal.kernel.State">
@@ -1043,8 +1033,6 @@
                 </property>
             </entity>
             <entity name="On" class="ptolemy.domains.modal.kernel.State">
-                <property name="refinementName" class="ptolemy.kernel.util.StringAttribute">
-                </property>
                 <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
                 <property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory">
@@ -1091,7 +1079,7 @@
         <link port="_Controller.open" relation="openRelation"/>
     </entity>
     <entity name="NetworkWaterConsumption" class="ptolemy.actor.lib.gui.TimedPlotter">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1314, 432, 516, 360}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={3221, 476, 516, 360}, maximized=false}">
         </property>
         <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
         </property>
@@ -1102,8 +1090,8 @@
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
 <title>NetworkWaterConsumption</title>
-<xRange min="0.0" max="720.0"/>
-<yRange min="0.0" max="208.49999999999244"/>
+<xRange min="0.0" max="277.40000000000003"/>
+<yRange min="0.0" max="75.99999999999996"/>
 </plot>?>
         </configure>
     </entity>
